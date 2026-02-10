@@ -17,7 +17,7 @@ function Gallery() {
       title: "Portfolio Logo Design",
       description: "Custom branding created for my personal identity.",
       image: logo,
-      link: "https://github.com/yourusername/repo2"
+      link: "https://github.com/Quadeatschool/QuadeOnTheWeb"
     }
   ];
 
