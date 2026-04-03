@@ -1,7 +1,7 @@
 .site-footer {
-  background: #8c271e;
-  color: #fff;
-  border-top: 2px solid #6f1f18;
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  border-top: 2px solid var(--brand-border);
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
   height: 34px;
   object-fit: contain;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--logo-backdrop);
   padding: 0.2rem;
 }
 
@@ -44,13 +44,13 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--soft-accent);
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .social-link:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.24);
+  background: var(--soft-accent-strong);
 }
 
 .social-icon {
