@@ -1,0 +1,160 @@
+// src/components/Contact/Contact.jsx
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import styles from './Contact.module.css';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    from_name: '',
+    from_email: '',
+    message: '',
+    honeypot: '',
+  });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.from_name.trim())
+      newErrors.from_name = 'Name is required';
+    if (!formData.from_email.trim())
+      newErrors.from_email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.from_email))
+      newErrors.from_email = 'Enter a valid email address';
+    if (!formData.message.trim())
+      newErrors.message = 'Message is required';
+    else if (formData.message.trim().length < 10)
+      newErrors.message = 'Message must be at least 10 characters';
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errors[e.target.name])
+      setErrors({ ...errors, [e.target.name]: '' });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Honeypot check
+    if (formData.honeypot) return;
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus('error');
+      return;
+    }
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setStatus('loading');
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.from_name,
+          from_email: formData.from_email,
+          message: formData.message,
+        },
+        publicKey
+      );
+      setStatus('success');
+      setFormData({ from_name: '', from_email: '', message: '', honeypot: '' });
+    } catch (err) {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section className={styles.container}>
+      <h2 className={styles.heading}>Contact Me</h2>
+
+      {status === 'success' && (
+        <p className={styles.successMsg}>Message sent! I'll get back to you soon.</p>
+      )}
+      {status === 'error' && (
+        <p className={styles.errorMsg}>Something went wrong. Please try again.</p>
+      )}
+
+      <form onSubmit={handleSubmit} noValidate className={styles.form}>
+
+        {/* Honeypot — invisible to real users */}
+        <input
+          type="text"
+          name="honeypot"
+          value={formData.honeypot}
+          onChange={handleChange}
+          style={{ display: 'none' }}
+          tabIndex="-1"
+          autoComplete="off"
+        />
+
+        <div className={styles.field}>
+          <label htmlFor="from_name">Name</label>
+          <input
+            id="from_name"
+            type="text"
+            name="from_name"
+            value={formData.from_name}
+            onChange={handleChange}
+            className={errors.from_name ? styles.inputError : ''}
+          />
+          {errors.from_name && (
+            <span className={styles.errorText}>{errors.from_name}</span>
+          )}
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="from_email">Email</label>
+          <input
+            id="from_email"
+            type="email"
+            name="from_email"
+            value={formData.from_email}
+            onChange={handleChange}
+            className={errors.from_email ? styles.inputError : ''}
+          />
+          {errors.from_email && (
+            <span className={styles.errorText}>{errors.from_email}</span>
+          )}
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={5}
+            className={errors.message ? styles.inputError : ''}
+          />
+          {errors.message && (
+            <span className={styles.errorText}>{errors.message}</span>
+          )}
+        </div>
+
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className={styles.button}
+        >
+          {status === 'loading' ? 'Sending...' : 'Send Message'}
+        </button>
+
+      </form>
+    </section>
+  );
+};
+
+export default Contact;

@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 function Footer() {
   const currentYear = new Date().getFullYear();
   const githubUrl = 'https://github.com/Quadeatschool';
-  const linkedinUrl = 'https://www.linkedin.com/in/your-linkedin-handle/';
+  const linkedinUrl = 'https://www.linkedin.com/in/quade-hafen-8689932a3';
 
   return (
     <footer className="site-footer">
