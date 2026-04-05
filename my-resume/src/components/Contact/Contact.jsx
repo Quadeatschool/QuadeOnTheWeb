@@ -10,6 +10,7 @@ const Contact = () => {
     message: '',
     honeypot: '',
   });
+  const [submittedSummary, setSubmittedSummary] = useState(null);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [feedback, setFeedback] = useState('');
@@ -73,6 +74,11 @@ const Contact = () => {
       );
       setStatus('success');
       setFeedback('Message sent! I\'ll get back to you soon.');
+      setSubmittedSummary({
+        from_name: formData.from_name.trim(),
+        from_email: formData.from_email.trim(),
+        message: formData.message.trim(),
+      });
       setFormData({ from_name: '', from_email: '', message: '', honeypot: '' });
     } catch (err) {
       setStatus('error');
@@ -86,6 +92,15 @@ const Contact = () => {
 
       {status === 'success' && <p className={styles.successMsg}>{feedback}</p>}
       {status === 'error' && <p className={styles.errorMsg}>{feedback}</p>}
+
+      {submittedSummary && (
+        <section className={styles.summaryCard} aria-label="Submitted message summary">
+          <h3 className={styles.summaryHeading}>Submitted Summary</h3>
+          <p><strong>Name:</strong> {submittedSummary.from_name}</p>
+          <p><strong>Email:</strong> {submittedSummary.from_email}</p>
+          <p><strong>Message:</strong> {submittedSummary.message}</p>
+        </section>
+      )}
 
       <form onSubmit={handleSubmit} noValidate className={styles.form}>
 

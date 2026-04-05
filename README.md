@@ -31,9 +31,9 @@ To recreate the development environment, you need the following software and/or 
 
 I found these websites useful in developing this software:
 
-* [Website Title](Link)
-*
-*
+* [Coolers](https://coolors.co/8c271e-090809-4d8b31-f6aa1c-ffcf00)
+* [EmailJS](https://dashboard.emailjs.com/)
+* [Claude AI](https://claude.ai)
 
 ## Future Work
 

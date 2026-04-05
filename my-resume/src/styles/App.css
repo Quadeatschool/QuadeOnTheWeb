@@ -33,3 +33,49 @@ main {
   border-radius: 10px;
   box-shadow: 0 8px 18px var(--shadow-color);
 }
+
+.website-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.website-card {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--brand-border);
+  background: color-mix(in srgb, var(--surface-bg) 92%, var(--page-bg));
+  box-shadow: 0 6px 14px var(--shadow-color);
+}
+
+.website-card h3 {
+  margin-top: 0;
+}
+
+.website-card p {
+  margin: 0 0 0.9rem;
+  line-height: 1.5;
+}
+
+.website-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--link-color);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.website-card a:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 620px) {
+  main {
+    margin: 1rem;
+  }
+}
