@@ -12,6 +12,7 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [feedback, setFeedback] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -46,6 +47,7 @@ const Contact = () => {
 
     if (!serviceId || !templateId || !publicKey) {
       setStatus('error');
+      setFeedback('Contact form is not configured yet. Add your EmailJS keys to a .env file.');
       return;
     }
 
@@ -56,6 +58,7 @@ const Contact = () => {
     }
 
     setStatus('loading');
+    setFeedback('');
 
     try {
       await emailjs.send(
@@ -69,9 +72,11 @@ const Contact = () => {
         publicKey
       );
       setStatus('success');
+      setFeedback('Message sent! I\'ll get back to you soon.');
       setFormData({ from_name: '', from_email: '', message: '', honeypot: '' });
     } catch (err) {
       setStatus('error');
+      setFeedback('Something went wrong while sending the message. Please try again.');
     }
   };
 
@@ -79,12 +84,8 @@ const Contact = () => {
     <section className={styles.container}>
       <h2 className={styles.heading}>Contact Me</h2>
 
-      {status === 'success' && (
-        <p className={styles.successMsg}>Message sent! I'll get back to you soon.</p>
-      )}
-      {status === 'error' && (
-        <p className={styles.errorMsg}>Something went wrong. Please try again.</p>
-      )}
+      {status === 'success' && <p className={styles.successMsg}>{feedback}</p>}
+      {status === 'error' && <p className={styles.errorMsg}>{feedback}</p>}
 
       <form onSubmit={handleSubmit} noValidate className={styles.form}>
 
