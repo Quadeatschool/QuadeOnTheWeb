@@ -65,6 +65,26 @@ function Home() {
               Visit GitHub
             </a>
           </article>
+
+          <article className="website-card">
+            <h3>Coolers</h3>
+            <p>
+              Amazing color palette generator for designing cohesive UIs.
+            </p>
+            <a href="https://coolors.co/" target="_blank" rel="noreferrer">
+              Visit Coolers
+            </a>
+          </article>
+
+          <article className="website-card">
+            <h3>EmailJS</h3>
+            <p>
+              Service for sending emails directly from the browser without a backend.
+            </p>
+            <a href="https://www.emailjs.com/" target="_blank" rel="noreferrer">
+              Visit EmailJS
+            </a>
+          </article>
         </div>
       </section>
     </main>

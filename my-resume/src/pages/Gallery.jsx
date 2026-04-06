@@ -1,43 +1,47 @@
-// 1. Import your images from the assets folder
-import project1 from '../assets/project1.png'; // Rename these to match your filenames!
+import screenshotOne from '../assets/Screenshot 2025-02-04 104224.png';
 import logo from '../assets/logo.png';
 
 function Gallery() {
-  // 2. This is your "Database" of projects
   const projects = [
     {
       id: 1,
-      title: "My First Professional Project",
-      description: "A cool web app built for my own amusment.",
-      image: project1,
-      link: "https://github.com/yourusername/repo1"
+      title: 'Chinese Word Map',
+      description:
+        'Maps Chinese characters into a story structure designed for mind palace memory exercises.',
+      image: screenshotOne,
+      link: 'https://github.com/Quadeatschool/ChineseWordMap',
     },
     {
       id: 2,
-      title: "Portfolio Logo Design",
-      description: "Custom branding created for my personal identity.",
+      title: 'Quade OnTheWeb Portfolio',
+      description:
+        'My personal React portfolio with dark mode, contact form, and project showcase pages.',
       image: logo,
-      link: "https://github.com/Quadeatschool/QuadeOnTheWeb"
-    }
+      link: 'https://github.com/Quadeatschool/QuadeOnTheWeb',
+    },
   ];
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Professional Gallery</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
-        
-        {/* 3. This is where the magic happens: Mapping the data to HTML */}
+    <main>
+      <h1>GitHub Projects Gallery</h1>
+      <p>
+        A collection of projects from my GitHub. Each card links directly to
+        the repository.
+      </p>
+
+      <div className="website-grid">
         {projects.map((project) => (
-          <div key={project.id} style={{ border: '1px solid #ddd', padding: '10px', borderRadius: '8px' }}>
-            <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '4px' }} />
+          <article key={project.id} className="website-card">
+            <img className="project-image" src={project.image} alt={project.title} />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noreferrer">View Repository</a>
-          </div>
+            <a href={project.link} target="_blank" rel="noreferrer">
+              View Repository
+            </a>
+          </article>
         ))}
-
       </div>
-    </div>
+    </main>
   );
 }
 

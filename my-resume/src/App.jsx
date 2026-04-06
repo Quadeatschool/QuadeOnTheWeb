@@ -3,15 +3,9 @@ import './styles/App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Gallery from './pages/Gallery';
 import Contact from './components/Contact/Contact';
 import protagonistImage from './assets/Protagonist.png';
-
-const Gallery = () => (
-  <div>
-    <h2>My Professional Gallery</h2>
-    <p>Photos coming soon...</p>
-  </div>
-);
 
 function App() {
   return (

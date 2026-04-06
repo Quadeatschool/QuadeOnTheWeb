@@ -53,6 +53,15 @@ main {
   margin-top: 0;
 }
 
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--surface-text) 14%, transparent);
+  margin-bottom: 0.8rem;
+}
+
 .website-card p {
   margin: 0 0 0.9rem;
   line-height: 1.5;
