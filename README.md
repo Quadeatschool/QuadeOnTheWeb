@@ -1,4 +1,3 @@
-```
 # Quade OnTheWeb - Personal Site/Portfolio 
 
 A modern, responsive React portfolio built with Vite featuring dark mode support, a functional contact form with EmailJS integration, and a GitHub projects gallery. Deployed to GitHub Pages with automated CI/CD.
@@ -50,20 +49,15 @@ Useful websites and tools used in developing this software:
 * [MDN Web Docs](https://developer.mozilla.org/) - Web documentation
 * [React Docs](https://react.dev/) - React framework documentation
 * [Vite](https://vite.dev/) - Next generation frontend tooling
-are planned for future improvements:
+
+## Future Work
+
+The following items are planned for future improvements:
 
 * [ ] Integrate a database to persist contact submissions and guestbook entries
-* [ ] Add an detailed About page with professional timeline
+* [ ] Add a detailed About page with professional timeline
 * [ ] Improve Lighthouse performance scores to 95+
 * [ ] Add page transitions and component animations
 * [ ] Create a blog or articles section with markdown support
 * [ ] Add dark mode to individual page components for finer control
-* [ ] Implement project filtering and search on Gallery pageled background information
-* [ ] Improve lighthouse performance score to 95+
-* [ ] Add animations and transitions for smoother UX
-* [ ] Create a blog or articles section
-```
-
-```
-
-```
+* [ ] Implement project filtering and search on Gallery page
