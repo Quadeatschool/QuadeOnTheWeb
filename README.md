@@ -1,11 +1,11 @@
 ```
-# Quade OnTheWeb - Portfolio
+# Quade OnTheWeb - Personal Site
 
-A React-based portfolio website built with Vite, featuring dark mode, a contact form, and a curated list of useful websites. This project demonstrates modern web development practices including responsive design, form validation, email integration, and accessibility optimization.
+Add a description of your project here.
 
 ## Instructions for Build and Use
 
-[Software Demo](https://youtu.be/your-video-link-here)
+[Software Demo](Put_Your_Video_Link_Here)
 
 Steps to build and/or run the software:
 
@@ -21,7 +21,7 @@ Steps to build and/or run the software:
 
 Instructions for using the software:
 
-1. Navigate through the portfolio pages using the navbar (Home, Gallery, Contact)
+1. Navigate through the site's pages using the navbar (Home, Gallery, Contact)
 2. Toggle between light and dark mode using the theme button in the navbar
 3. View curated websites on the Home page and click links to visit them
 4. Fill out the Contact form with your name, email, and message
@@ -44,13 +44,9 @@ To recreate the development environment, you need the following software and/or 
 
 I found these websites useful in developing this software:
 
-* [Coolers](https://coolors.co/8c271e-090809-4d8b31-f6aa1c-ffcf00) - Color palette generator
-* [EmailJS](https://dashboard.emailjs.com/) - Email service for contact forms
-* [Claude AI](https://claude.ai) - AI assistant for development help
-* [MDN Web Docs](https://developer.mozilla.org/) - Comprehensive web development reference
-* [React](https://react.dev/) - React documentation and tutorials
-* [Vite](https://vite.dev/) - Fast build tool and dev server
-* [GitHub](https://github.com/) - Version control and project hosting
+* [Coolers](https://coolors.co/8c271e-090809-4d8b31-f6aa1c-ffcf00)
+* [EmailJS](https://dashboard.emailjs.com/)
+* [Claude AI](https://claude.ai)
 
 ## Future Work
 
