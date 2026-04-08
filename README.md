@@ -1,11 +1,11 @@
 ```
-# Quade OnTheWeb - Personal Site
+# Quade OnTheWeb - Personal Site/Portfolio 
 
-Add a description of your project here.
+A modern, responsive React portfolio built with Vite featuring dark mode support, a functional contact form with EmailJS integration, and a GitHub projects gallery. Deployed to GitHub Pages with automated CI/CD.
 
 ## Instructions for Build and Use
 
-[Software Demo](Put_Your_Video_Link_Here)
+[Software Demo Video](Put_Your_Video_Link_Here)
 
 Steps to build and/or run the software:
 
@@ -40,21 +40,25 @@ To recreate the development environment, you need the following software and/or 
 * ESLint (^9.39.1)
 * gh-pages (^6.3.0)
 
-## Useful Websites to Learn More
+## Resources & Tools
 
-I found these websites useful in developing this software:
+Useful websites and tools used in developing this software:
 
-* [Coolers](https://coolors.co/8c271e-090809-4d8b31-f6aa1c-ffcf00)
-* [EmailJS](https://dashboard.emailjs.com/)
-* [Claude AI](https://claude.ai)
+* [Coolers](https://coolors.co/8c271e-090809-4d8b31-f6aa1c-ffcf00) - Color palette generator
+* [EmailJS](https://dashboard.emailjs.com/) - Email service for contact forms
+* [Claude AI](https://claude.ai) - AI assistant for development
+* [MDN Web Docs](https://developer.mozilla.org/) - Web documentation
+* [React Docs](https://react.dev/) - React framework documentation
+* [Vite](https://vite.dev/) - Next generation frontend tooling
+are planned for future improvements:
 
-## Future Work
-
-The following items I plan to fix, improve, and/or add to this project in the future:
-
-* [ ] Add a Projects/Portfolio page with detailed project cards
-* [ ] Integrate a database to store guestbook or contact submissions
-* [ ] Add an About page with more detailed background information
+* [ ] Integrate a database to persist contact submissions and guestbook entries
+* [ ] Add an detailed About page with professional timeline
+* [ ] Improve Lighthouse performance scores to 95+
+* [ ] Add page transitions and component animations
+* [ ] Create a blog or articles section with markdown support
+* [ ] Add dark mode to individual page components for finer control
+* [ ] Implement project filtering and search on Gallery pageled background information
 * [ ] Improve lighthouse performance score to 95+
 * [ ] Add animations and transitions for smoother UX
 * [ ] Create a blog or articles section
